@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses.apps.CoursesConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'rest_framework',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ DATABASES = {
     'ENGINE': 'django.db.backends.mysql',
     'NAME': 'coursedb',
     'USER': 'root',
-    'PASSWORD': 'Admin@123', # passwword root
+    'PASSWORD': 'root', # passwword root
     'HOST': '' # mặc định localhost
     }
 }
@@ -96,6 +98,19 @@ CKEDITOR_UPLOAD_PATH = "ckeditors/lessons/"
 
 import pymysql
 pymysql.install_as_MySQLdb()
+
+
+import cloudinary
+import cloudinary.uploader
+from cloudinary.utils import cloudinary_url
+
+# Configuration
+cloudinary.config(
+    cloud_name = "dbitlfhjx",
+    api_key = "889556431667884",
+    api_secret = "ycTIF7ajW7_lKzO_Ff4zAwpeB6g", # Click 'View API Keys' above to copy your API secret
+    secure=True
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
