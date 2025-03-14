@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db.models import Count
 from django.template.response import TemplateResponse
 
-from courses.models import Category, Course, Lesson, Tag
+from courses.models import Category, Course, Lesson, Tag, Comment
 from django.utils.html import mark_safe
 from django.urls import path
 
@@ -48,5 +48,6 @@ admin_site = CourseAppAdminSite(name='myadmin')
 
 admin_site.register(Category)
 admin_site.register(Tag)
+admin_site.register(Comment)
 admin_site.register(Course, MyCourseAdmin)
 admin_site.register(Lesson, MyLessonAdmin)
