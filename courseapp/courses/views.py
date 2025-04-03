@@ -66,9 +66,9 @@ class LessonViewSet(viewsets.ViewSet, generics.RetrieveAPIView):
         li, created = Like.objects.get_or_create(user = request.user, lesson_id=pk)
         if not created:
             li.active = not li.active
-            li.save()
+        li.save()
 
-            return Response(serializers.LessonSerializer(self.get_object()).data)
+        return Response(serializers.LessonSerializer(self.get_object(), context={'request': request}).data)
 
 class UserViewSet(viewsets.ViewSet, generics.CreateAPIView):
     queryset = User.objects.filter(is_active=True)
