@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Avatar } from "react-native-paper";
 
 export default StyleSheet.create({
     container: {
@@ -13,5 +14,11 @@ export default StyleSheet.create({
         flexWrap: "wrap"
     },m: {
         margin: 5
+    }, avatar: {
+        width: 80,
+        height: 80,
+        borderRadius: 50
+    }, p: {
+        padding: 5
     }
 });
